@@ -1,1 +1,5 @@
-<p>Hello</p>
+<p>Hello, here are all your cocktails</p>
+
+<% @cocktails.each do |cocktail| %>
+  <p><%= cocktail.name %></p>
+<% end %>

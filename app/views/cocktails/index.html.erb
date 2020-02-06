@@ -1,5 +1,66 @@
-<p>Hello, here are all your cocktails</p>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="#">
+    <%= image_tag "cocktail.png", alt:"altext" %>
+<!--     <img src="cocktail.png" /> -->
+</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<% @cocktails.each do |cocktail| %>
-  <p><%= cocktail.name %></p>
-<% end %>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+<!--         <a class="nav-link" href="/cocktails">My cocktails</a> -->
+      </li>
+      <li class="nav-item dropdown">
+        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/alinegasparindo" />
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <h1>A whole new world of cocktails</h1>
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-cocktail">
+        <%= image_tag "1.jpg", alt:"altext" %>
+<!--         <img src="https://source.unsplash.com/random/200x500" /> -->
+        <div class="card-cocktail-infos">
+          <div>
+            <h2>🍸<%= cocktail.name  %></h2>
+            <div class="icons">
+              <p> <%= link_to "🙃 How to Prepare", cocktail_path(cocktail) %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<!--
+  <a class="btn btn-gradient" href="new_cocktail_path">Start now</a> -->
+  <h1><%= link_to "I want to create one", new_cocktail_path, {class: "btn btn-gradient"}  %></h1>
+
+</div>
+
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+  </div>
+</div>

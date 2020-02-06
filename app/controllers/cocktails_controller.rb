@@ -2,7 +2,6 @@ class CocktailsController < ApplicationController
   #   resources :cocktails, only: [ :index, :show, :new, :create ] do
   #   resources :doses, only: [ :new, :create, :destroy ]
   # end
-
   def index
     @cocktails = Cocktail.all
   end

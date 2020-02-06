@@ -1,3 +1,59 @@
-<p>hello from the show</p>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="#">
+    <%= image_tag "cocktail.png", alt:"altext" %>
+<!--     <img src="cocktail.png" /> -->
+</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<%= @cocktail.name %>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+<!--         <a class="nav-link" href="#">Home</a> -->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/cocktails">My cocktails</a>
+      </li>
+      <li class="nav-item dropdown">
+        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/alinegasparindo" />
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+
+  <h1 class="title-show">🍸<%= @cocktail.name %></h1>
+
+  <div class="show">
+    <div class="show-image">
+      <%= image_tag "1.jpg", alt:"altext" %>
+    </div>
+
+    <div class="show-text">
+      <h3>Ingredients 📝</h3>
+      <% @cocktail.doses.each do |dose| %>
+        <p class="dose-description"><%= dose.description %> of <%= dose.ingredient.name %></p>
+        <p class="icons-oposite"><%= link_to "Delete this dose", dose_path(dose), method: :delete %></p>
+
+      <% end %>
+
+      <%= link_to "Add ingredients", new_cocktail_dose_path(@cocktail), {class: "btn btn-gradient"} %>
+
+    </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+

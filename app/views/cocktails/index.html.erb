@@ -32,8 +32,9 @@
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
       <div class="card-cocktail">
-        <%= image_tag "1.jpg", alt:"altext" %>
-<!--         <img src="https://source.unsplash.com/random/200x500" /> -->
+
+        <%= cl_image_tag cocktail.photo.key %>
+
         <div class="card-cocktail-infos">
           <div>
             <h2>🍸<%= cocktail.name  %></h2>
@@ -50,7 +51,7 @@
   <h1><%= link_to "I want to create one", new_cocktail_path, {class: "btn btn-gradient"}  %></h1>
 
 
-<%= cl_image_tag("uduysnpwwesvka54mq4a", width: 400, height: 300, crop: :fill) %>
+
 
 
 </div>
